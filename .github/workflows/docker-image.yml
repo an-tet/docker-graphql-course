@@ -17,6 +17,7 @@ jobs:
       uses: actions/checkout@v3
       with: 
         fetch-depth: 0
+        
     - name: Docker login
       env:
         DOCKER_USER: ${{ secrets.DOCKER_SECRET }}
@@ -25,6 +26,5 @@ jobs:
         echo "docker login"
         docker login -u $DOCKER_SECRET -p $DOCKER_PASSWORD
         echo "docker fin login"
-    
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
